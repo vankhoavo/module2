@@ -57,9 +57,49 @@ echo '<br/>';
 
 //6. Kiểu dữ liệu NULL (rỗng)
 $total = null;
-$total = (string)$total;
+$total = (int)$total;
+// $total = (array)$total;
 $checkNull = is_null($total);
 var_dump($total);
 echo '<br/>';
 var_dump($checkNull);
+echo '<br/>';
+echo '<br/>';
+
+//7. Kiểu dữ liệu Resource
+// $curl = curl_init();
+// $checkType = get_resource_type($curl);
+// var_dump($curl);
+// echo '<br/>';
+// var_dump($checkType);
+
+
+//8. Kiểu đối tượng (Object)
+$dataCustomer = [
+    'Võ Văn Khoa'
+];
+$dataCustomer = (object)$dataCustomer; //Ép kiểu
+$checkObject = is_object($dataCustomer);
+var_dump($dataCustomer);
+echo '<br/>';
+var_dump($checkObject);
+echo '<br/>';
+echo '<br/>';
+
+$customerObject = new stdClass();
+$customerObject->age=30;
+var_dump($customerObject);
+echo '<br/>';
+echo '<br/>';
+
+
+/*
+Phân biệt empty và null
+*/
+
+$message1 = null; //Rỗng
+$message2 = ''; //Trống, thực tế là nó thuộc kiểu string
+var_dump($message1);
+echo '<br/>';
+var_dump($message2);
 
